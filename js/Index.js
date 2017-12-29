@@ -1,7 +1,17 @@
 //variables de Operaciones
 var tagn,a,b,c;
 //variable para operaciones 
-var tag="";
+var tag="",resultado="";
+//function MOver(){
+//   
+//document.getElementById("on").addEventListener("mouseover", mouseOver);
+//document.getElementById("on").addEventListener("mouseout", mouseOut);
+//document.getElementById("sign").addEventListener("mouseover", mouseOver);
+//document.getElementById("sign").addEventListener("mouseout", mouseOut);
+//document.getElementById("raiz").addEventListener("mouseover", mouseOver);
+//document.getElementById("raiz").addEventListener("mouseout", mouseOut);
+//
+//}
 function entradaValores(){
 document.getElementById("on").addEventListener("click", function() {
      tag=document.getElementById("on").alt;
@@ -47,78 +57,147 @@ document.getElementById("mas").addEventListener("click", function() {
 });
 document.getElementById("0").addEventListener("click", function() {
      tagn=document.getElementById("0").alt;
-    document.getElementById("display").innerHTML+=tagn;
+    if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("1").addEventListener("click", function() {
      tagn=document.getElementById("1").alt;
-    document.getElementById("display").innerHTML+=tagn;
+     if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("2").addEventListener("click", function() {
      tagn=document.getElementById("2").alt;
-    document.getElementById("display").innerHTML+=tagn;
+    if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("3").addEventListener("click", function() {
      tagn=document.getElementById("3").alt;
-     document.getElementById("display").innerHTML+=tagn;
+         if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("4").addEventListener("click", function() {
      tagn=document.getElementById("4").alt;
-     document.getElementById("display").innerHTML+=tagn;
+         if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("5").addEventListener("click", function() {
      tagn=document.getElementById("5").alt;
-     document.getElementById("display").innerHTML+=tagn;
+       if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("6").addEventListener("click", function() {
      tagn=document.getElementById("6").alt;
-    document.getElementById("display").innerHTML+=tagn;
+        if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("7").addEventListener("click", function() {
      tagn=document.getElementById("7").alt;
-  document.getElementById("display").innerHTML+=tagn;
+    if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("8").addEventListener("click", function() {
      tagn=document.getElementById("8").alt;
-   document.getElementById("display").innerHTML+=tagn;
+     if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 document.getElementById("9").addEventListener("click", function() {
      tagn=document.getElementById("9").alt;
-    document.getElementById("display").innerHTML+=tagn;
+     if((document.getElementById("display").innerHTML).length<8){
+         document.getElementById("display").innerHTML+=tagn;
+    }
 });
 }
 function  operaciones(){
 document.getElementById("igual").addEventListener("click", function() {
      tagi=document.getElementById("igual").alt;
        b=document.getElementById("display").innerHTML;
-   switch (tag) {
-    case "mas":
-           c=parseFloat(a)+parseFloat(b);
-          document.getElementById("display").innerHTML=c.toFixed(2);
-        break;
-    case "menos":
-        c=parseFloat(a)-parseFloat(b);
-          document.getElementById("display").innerHTML=c.toFixed(2)
-        break;
-    case "por":
-        c=parseFloat(a)*parseFloat(b);
-          document.getElementById("display").innerHTML=c.toFixed(2);
-        break;
-    case "dividido":
-        c=parseFloat(a)/parseFloat(b);
-          document.getElementById("display").innerHTML=c.toFixed(2);
-        break;
-        case "raiz":
-          c= Math.sqrt(Number(a));
+        switch (tag) {
+            case "mas":
+                c = parseFloat(a) + parseFloat(b);
 
-          document.getElementById("display").innerHTML=c.toFixed(8);
-          
-        break;
+                resultado = (c).toString();
+                c = resultado.length;
+                if (c <= 8) {
+                    document.getElementById("display").innerHTML = resultado;
+                } else {
+                    
+                    document.getElementById("display").innerHTML = resultado.substr(0,7);
+                }
+                break;
+            case "menos":
+                c = parseFloat(a) - parseFloat(b);
+                resultado = (c).toString();
+                c = resultado.length;
+                if (c <= 8) {
+                    document.getElementById("display").innerHTML = resultado;
+                } else {
+                    
+                    document.getElementById("display").innerHTML = resultado.substr(0,8);
+                }
+                break;
+            case "por":
+                c = parseFloat(a) * parseFloat(b);
+                resultado = (c).toString();
+                c = resultado.length;
+                if (c <= 8) {
+                    document.getElementById("display").innerHTML = resultado;
+                } else {
+             
+                    document.getElementById("display").innerHTML =resultado.substr(0,8);
+                }
+                break;
+            case "dividido":
+                c = parseFloat(a) / parseFloat(b);
+                resultado = (c).toString();
+                c = resultado.length;
+                if (c <= 8) {
+                    document.getElementById("display").innerHTML = resultado;
+                } else {
+                    
+                    document.getElementById("display").innerHTML = resultado.substr(0,8);
+                }
+                break;
+            case "raiz":
+                c = Math.sqrt(Number(a));
+
+                resultado = (c).toString();
+                c = resultado.length;
+                if (c <= 8) {
+                    document.getElementById("display").innerHTML = resultado;
+                } else {
+                   
+                    document.getElementById("display").innerHTML = resultado.substr(0,8);
+                }
+
+                break;
 }  
 });
 }
+
+//function mouseOver() {
+//    
+//    document.getElementById(tdiv).style.width="23%";
+//    document.getElementById(tdiv).style.height="68.91px";
+//}
+//
+//function mouseOut() {
+//    document.getElementById(tdiv).style.width="";
+//    document.getElementById(tdiv).style.height="";
+// 
+//}
+
 entradaValores();
 operaciones();
-
+//MOver();
 
 
 

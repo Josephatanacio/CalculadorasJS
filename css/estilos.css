@@ -44,6 +44,10 @@ body{
   width: 22%;
   height: 62.91px;
 }
+.teclado img:hover{
+        width:21.5%;
+       height:59.91px;
+}
 @font-face {
   font-family: digital;
   src: url("../fonts/digital.ttf");
@@ -64,6 +68,7 @@ body{
   justify-content: space-between;
   align-items: stretch;
 }
+
 .col2{
   display: flex;
   width: 25%;
@@ -75,11 +80,20 @@ body{
   margin-left: 10px;
 
 }
+#mas:hover{
+  width: 87%;
+  height: 100%;
+  margin-left: 12px;
+
+}
 .teclado .row .col1 img{
   width: 29%;
   height: 62.91px;
 }
-
+.teclado .row .col1 img:hover{
+  width: 28.5%;
+  height: 61.91px;
+}
 .container-libreta{
   width: 33%;
   height: 40rem
